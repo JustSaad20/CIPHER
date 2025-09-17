@@ -173,7 +173,7 @@ def main():
                             # if not os.path.exists(filename):
                             #     np.save(filename, quantized_weight)
 
-                            encoded_weight = fpc_protocol(quantized_weight, error_lvl2[error_values], error_lvl3[error_values])
+                            encoded_weight = fpc_protocol(quantized_weight, error_lvl2[error_values], error_lvl3[error_values], 0)
 
                             # Decoding and fault inject
                             quantized_weight_torch = torch.from_numpy(encoded_weight.astype(float))

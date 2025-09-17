@@ -81,12 +81,12 @@ def main():
         )
 
         trainset = torchvision.datasets.CIFAR10(
-            root="~/Datasets/cifar10/", train=True, download=False, transform=transform_train
+            root="./Datasets/cifar10/", train=True, download=False, transform=transform_train
         )
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=500, shuffle=True, num_workers=2)
 
         testset = torchvision.datasets.CIFAR10(
-            root="~/Datasets/cifar10/", train=False, download=False, transform=transform_test
+            root="./Datasets/cifar10/", train=False, download=False, transform=transform_test
         )
         _, val_set = torch.utils.data.random_split(testset, [9500, 500])
 
@@ -173,7 +173,7 @@ def main():
                             # if not os.path.exists(filename):
                             #     np.save(filename, quantized_weight)
 
-                            encoded_weight = err_handler_8(quantized_weight, error_lvl2[error_values], error_lvl3[error_values], save_state)
+                            encoded_weight = fpc_protocol(quantized_weight, error_lvl2[error_values], error_lvl3[error_values])
 
                             # Decoding and fault inject
                             quantized_weight_torch = torch.from_numpy(encoded_weight.astype(float))

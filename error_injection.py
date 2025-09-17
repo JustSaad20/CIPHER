@@ -1,3 +1,5 @@
+import numpy as np
+
 def error_injection(prcssd_weight, mlc_error_lvl1, mlc_error_lvl2):
     unique, counts = np.unique(prcssd_weight, axis=0, return_counts=True)
     # Get indices that would sort the counts array in ascending order

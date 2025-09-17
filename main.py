@@ -150,9 +150,9 @@ def main():
             accuraciesMLC = []
             accuraciesSLC = []
             accuraciesSMARTSLC = []
-            csvloader = pd.read_csv("./error_level2_1year.csv", header=None, delimiter="\t")
+            csvloader = pd.read_csv("./injected_error_levels/error_level2_1year.csv", header=None, delimiter="\t")
             error_lvl2 = csvloader.values.reshape(-1)
-            csvloader = pd.read_csv("./error_level3_1year.csv", header=None, delimiter="\t")
+            csvloader = pd.read_csv("./injected_error_levels/error_level3_1year.csv", header=None, delimiter="\t")
             error_lvl3 = csvloader.values.reshape(-1)
             for error_values in range(25):
                 for save_state in range(2,3):
